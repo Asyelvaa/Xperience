@@ -19,26 +19,29 @@
             app:srcCompat="@drawable/splash"
             android:layout_centerHorizontal="true"
             />
+
         <TextView
             android:id="@+id/tvtellus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="tell us your"
-            android:textColor="@color/yellow"
-            android:textSize="15dp"
             android:layout_below="@+id/ivsplash"
             android:layout_centerHorizontal="true"
-            />
+            android:fontFamily="@font/poppins"
+            android:text="tell us your"
+            android:textFontWeight="800"
+            android:textColor="@color/yellow"
+            android:textSize="15dp" />
+
         <TextView
             android:id="@+id/tvxperince"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Xperience"
-            android:textColor="@color/purple2"
-            android:textSize="32sp"
             android:layout_below="@+id/tvtellus"
             android:layout_centerHorizontal="true"
-            />
+            android:fontFamily="@font/krona_one"
+            android:text="Xperience"
+            android:textColor="@color/purple2"
+            android:textSize="32sp" />
     </RelativeLayout>
 
 </RelativeLayout>
