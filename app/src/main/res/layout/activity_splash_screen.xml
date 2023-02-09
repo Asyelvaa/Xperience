@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashScreen"
+    android:background="@color/dark">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+        <ImageView
+            android:id="@+id/ivsplash"
+            android:layout_width="342dp"
+            android:layout_height="352dp"
+            app:srcCompat="@drawable/splash"
+            android:layout_centerHorizontal="true"
+            />
+        <TextView
+            android:id="@+id/tvtellus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tell us your"
+            android:textColor="@color/yellow"
+            android:textSize="15dp"
+            android:layout_below="@+id/ivsplash"
+            android:layout_centerHorizontal="true"
+            />
+        <TextView
+            android:id="@+id/tvxperince"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xperience"
+            android:textColor="@color/purple2"
+            android:textSize="32sp"
+            android:layout_below="@+id/tvtellus"
+            android:layout_centerHorizontal="true"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>
