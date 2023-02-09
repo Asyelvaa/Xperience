@@ -4,5 +4,6 @@
         <item>@font/</item>
         <item>@font/krona_one</item>
         <item>@font/poppins</item>
+        <item>@font/poppins_bold</item>
     </array>
 </resources>
