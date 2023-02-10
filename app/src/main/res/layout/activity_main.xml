@@ -13,16 +13,23 @@
         android:layout_width="214dp"
         android:layout_height="114dp"
         android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/illustration"
-        android:layout_marginTop="70dp"/>
+        android:layout_marginTop="70dp"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        app:srcCompat="@drawable/login"
+        android:elevation="-2dp"/>
 
     <View
+        android:id="@+id/container"
         android:layout_width="340dp"
         android:layout_height="500dp"
         android:layout_below="@+id/illustration"
         android:layout_centerHorizontal="true"
         android:background="@drawable/container_login"
-        android:elevation="-1dp" />
+        android:elevation="-1dp"
+        android:layout_marginTop="20dp">
+
+    </View>
 
     <TextView
         android:id="@+id/tvwelcome"
@@ -34,6 +41,7 @@
         android:text="Welcome Back!"
         android:textColor="@color/yellow"
         android:textSize="25dp"
+        android:layout_alignTop="@+id/container"
         android:layout_marginVertical="40dp"/>
 
     <EditText
@@ -64,7 +72,7 @@
         android:textColor="@color/grey"
         android:textColorHint="@color/grey"
         android:textSize="15dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:paddingVertical="5dp"/>
 
     <TextView
@@ -157,31 +165,25 @@
         android:orientation="horizontal"
         android:layout_marginVertical="20dp">
 
-        <Button
-            android:layout_width="50dp"
-            android:layout_height="60dp"
-            android:layout_marginRight="15dp"
-            android:backgroundTint="@color/dark"
-            app:cornerRadius="10dp"
-            app:strokeColor="@color/purple2"
-            app:strokeWidth="2dp" />
 
-
-        <Button
+        <ImageButton
             android:layout_width="50dp"
-            android:layout_height="60dp"
-            android:backgroundTint="@color/dark"
-            app:cornerRadius="10dp"
-            app:strokeColor="@color/purple2"
-            app:strokeWidth="2dp" />
-
-        <Button
+            android:layout_height="50dp"
+            android:src="@drawable/icfb"
+            android:background="@drawable/icbutton"
+            />
+        <ImageButton
             android:layout_width="50dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="15dp"
-            android:backgroundTint="@color/dark"
-            app:cornerRadius="10dp"
-            app:strokeColor="@color/purple2"
-            app:strokeWidth="2dp" />
+            android:layout_height="50dp"
+            android:src="@drawable/icgoogle"
+            android:background="@drawable/icbutton"
+            android:layout_marginHorizontal="15dp"
+            />
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/icapple"
+            android:background="@drawable/icbutton"
+            />
     </LinearLayout>
 </RelativeLayout>
