@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Xperience</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_name">Hello, Alesya!</string>
+    <string name="title_description">Share Your Opinion</string>
+    <string name="title_categories">Categories</string>
+    <string name="title_view_all">View All</string>
+    <string name="title_places">Places</string>
+    <string name="title_fnb">F&amp;B</string>
+    <string name="title_clothes">Clothes</string>
+    <string name="title_cosmetics">Cosmetics</string>
+    <string name="title_topreview">Top Reviews</string>
+    <string name="traffa">Traffa Coffee</string>
+    <string name="indomie_rendang">Indomie Goreng</string>
+    <string name="boba_sundae_mixue">Boba Sundae - MIXUE</string>
+    <string name="wipsy">Wipsy Coffe &amp; Meet</string>
+
 </resources>
