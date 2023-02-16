@@ -1,18 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/dark"
+    android:padding="10dp">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:fillViewport="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/illustration"
+                android:layout_width="214dp"
+                android:layout_height="114dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/illustration"
+                android:elevation="-2dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <View
+                android:id="@+id/container"
+                android:layout_width="340dp"
+                android:layout_height="500dp"
+                android:layout_below="@+id/illustration"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/container_login"
+                android:elevation="-1dp">
+
+            </View>
+
+            <TextView
+                android:id="@+id/tvwelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/illustration"
+                android:layout_alignTop="@+id/container"
+                android:layout_centerHorizontal="true"
+                android:layout_marginVertical="40dp"
+                android:fontFamily="@font/krona_one"
+                android:text="Welcome Back!"
+                android:textColor="@color/yellow"
+                android:textSize="25dp" />
+
+            <EditText
+                android:id="@+id/etemail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvwelcome"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/input"
+                android:fontFamily="@font/poppins_medium"
+                android:hint="Email"
+                android:paddingLeft="20dp"
+                android:textColor="@color/grey"
+                android:textColorHint="@color/grey"
+                android:textSize="15dp"
+                android:paddingVertical="5dp"/>
+
+            <EditText
+                android:id="@+id/etpassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etemail"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/input"
+                android:fontFamily="@font/poppins_medium"
+                android:hint="Password"
+                android:paddingLeft="20dp"
+                android:textColor="@color/grey"
+                android:textColorHint="@color/grey"
+                android:textSize="15dp"
+                android:layout_marginTop="15dp"
+                android:paddingVertical="5dp"/>
+
+            <TextView
+                android:id="@+id/tvforget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etpassword"
+                android:layout_alignEnd="@+id/etpassword"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Forget Password?"
+                android:textColor="@color/grey"
+                android:textSize="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <Button
+                android:id="@+id/btnsign"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvforget"
+                android:layout_centerHorizontal="true"
+                android:layout_marginVertical="15dp"
+                android:backgroundTint="@color/iconbg"
+                android:fontFamily="@font/poppins_bold"
+                android:text="SIGN IN"
+                android:textColor="@color/dark"
+                android:textSize="15dp"
+                app:cornerRadius="10dp" />
+
+            <LinearLayout
+                android:id="@+id/tvor"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnsign"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="120dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/grey" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="or"
+                    android:textColor="@color/grey" />
+
+                <View
+                    android:layout_width="120dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/grey" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnmedia"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvdont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Don't have an account ? "
+                    android:textColor="@color/grey" />
+
+                <Button
+                    android:id="@+id/signup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/tvdont"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Sign Up"
+                    android:textColor="@color/grey"
+                    android:background="none"
+                    android:padding="0dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnmedia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvor"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal"
+                android:layout_marginVertical="20dp">
+
+
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/icfb"
+                    android:background="@drawable/icbutton"
+                    />
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/icgoogle"
+                    android:background="@drawable/icbutton"
+                    android:layout_marginHorizontal="15dp"
+                    />
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/icapple"
+                    android:background="@drawable/icbutton"
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

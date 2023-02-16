@@ -13,4 +13,7 @@
     <color name="iconbg">#E7C8F9</color>
     <color name="bg">#03071E</color>
     <color name="bg_navbar">#1D1F30</color>
+    <color name="dark">#03071E</color>
+    <color name="purple1">#C491E1</color>
+
 </resources>
