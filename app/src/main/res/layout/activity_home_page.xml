@@ -1,34 +1,1035 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomePage">
+    android:fillViewport="true"
+    android:background="@color/bg">
 
-    <ImageView
-        android:id="@+id/ivprofile"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.098"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="780dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.043"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintEnd_toEndOf="parent"
+        >
 
-    <TextView
-        android:id="@+id/tvhello"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:maxWidth="100dp"
-        android:text="TextView"
-        android:textSize="20dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".HomePage">
+
+            <ImageButton
+                android:id="@+id/profilepict"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/background3"
+                android:src="@drawable/ic_baseline_person_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_name" />
+
+            <TextView
+                android:id="@+id/title_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="47dp"
+                android:fontFamily="@font/kronaone_regular"
+                android:text="@string/title_name"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/profilepict"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/title_description"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@id/title_name"
+                app:layout_constraintTop_toBottomOf="@+id/title_name" />
+
+            <ImageButton
+                android:id="@+id/notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="47dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/background1"
+                android:src="@drawable/ic_notifications_black_24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/categories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:fontFamily="@font/kronaone_regular"
+                android:text="@string/title_categories"
+                android:textColor="@color/yellow"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="@id/profilepict"
+                app:layout_constraintTop_toBottomOf="@id/description" />
+
+            <TextView
+                android:id="@+id/viewAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/title_view_all"
+                android:textColor="@color/grey"
+                android:textSize="15sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/categories"
+                app:layout_constraintEnd_toEndOf="@id/notification" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fillViewport="true"
+                app:layout_constraintStart_toStartOf="@id/categories"
+                app:layout_constraintTop_toBottomOf="@id/categories">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/categories_loc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/background2"
+                            android:src="@drawable/ic_baseline_location_on_24" />
+
+                        <ImageButton
+                            android:id="@+id/categories_fnb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/background2"
+                            android:src="@drawable/fnb_icon_black" />
+
+                        <ImageButton
+                            android:id="@+id/categories_clothes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/background2"
+                            android:src="@drawable/clothes_icon" />
+
+                        <ImageButton
+                            android:id="@+id/categoris_cosmetic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginR="10dp"
+                            android:background="@drawable/background2"
+                            android:src="@drawable/lipstick" />
+
+                        <ImageButton
+                            android:id="@+id/categoris_devices"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/background2"
+                            android:src="@drawable/laptop" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4sp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/text_places"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center"
+                            android:text="@string/title_places"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/text_fnb"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center"
+                            android:text="@string/title_fnb"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/text_clothes"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center"
+                            android:text="@string/title_clothes"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/text_cosmetic"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center"
+                            android:text="@string/title_cosmetics"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/text_devices"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center"
+                            android:text="Devices"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/title_topReview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18sp"
+                android:fontFamily="@font/kronaone_regular"
+                android:text="@string/title_topreview"
+                android:textColor="@color/yellow"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="@+id/horizontalScrollView"
+                app:layout_constraintTop_toBottomOf="@id/horizontalScrollView" />
+
+            <LinearLayout
+                android:id="@+id/div_traffa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14sp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="@+id/title_topReview"
+                app:layout_constraintTop_toBottomOf="@+id/title_topReview">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_baseline_location_on_d9" />
+
+                <TextView
+                    android:id="@+id/text_traffa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/traffa"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:id="@+id/star_traffa"
+                    android:layout_width="50dp"
+                    android:layout_height="15dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_d9" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/description_traffa"
+                    android:layout_width="180dp"
+                    android:layout_height="60dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="The place is very comfortable, aesthetic, there are both indoor and outdoor, the drink variants are interesting and you should try it"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+
+                <View
+                    android:layout_width="180dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/grey"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4sp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/comment" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:fontFamily="@font/kronaone_regular"
+                        android:text="2.669"
+                        android:textColor="@color/grey"
+                        android:textSize="7sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:src="@drawable/like" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:fontFamily="@font/kronaone_regular"
+                        android:text="1.550"
+                        android:textColor="@color/grey"
+                        android:textSize="7sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/div_mixue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14sp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="@+id/title_topReview"
+                app:layout_constraintTop_toBottomOf="@+id/div_traffa">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/fnb_icon" />
+
+                <TextView
+                    android:id="@+id/text_mixue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/mixue"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:id="@+id/star_Mixue"
+                    android:layout_width="50dp"
+                    android:layout_height="15dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_d9" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/description_mixue"
+                    android:layout_width="180dp"
+                    android:layout_height="30dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Enak, murah, cepet cair, wajib sabar nunggu."
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+
+                <View
+                    android:layout_width="180dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/grey"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4sp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/comment" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:fontFamily="@font/kronaone_regular"
+                        android:text="371"
+                        android:textColor="@color/grey"
+                        android:textSize="7sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="110dp"
+                        android:src="@drawable/like" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:fontFamily="@font/kronaone_regular"
+                        android:text="2.588"
+                        android:textColor="@color/grey"
+                        android:textSize="7sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/div_reveline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14sp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="@+id/title_topReview"
+                app:layout_constraintTop_toBottomOf="@+id/div_mixue">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/lipstick_d9" />
+
+                <TextView
+                    android:id="@+id/text_reveline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Reveline - Humble"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:id="@+id/star_Reveline"
+                    android:layout_width="50dp"
+                    android:layout_height="15dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_d9" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_d9" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/description_Reveline"
+                    android:layout_width="180dp"
+                    android:layout_height="113dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="u all mustt havee thiss!!!!! dengan harga under 100rb kualitasnyaa ajib bangettt, ngga terlalu cair ataupun oilyy, juga ngga terlalu creammyy, meskipun gituu lembabb jugaa dann warnanya cakep mashaallahh, bau nya enakk, ngga beratt di bibirr, worth itt"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+
+                <View
+                    android:layout_width="180dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/grey"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4sp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/comment" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:fontFamily="@font/kronaone_regular"
+                        android:text="1.760"
+                        android:textColor="@color/grey"
+                        android:textSize="7sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="72dp"
+                        android:src="@drawable/like" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:fontFamily="@font/kronaone_regular"
+                        android:text="2.345"
+                        android:textColor="@color/grey"
+                        android:textSize="7sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/div_niveaLipBalm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14sp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="@+id/title_topReview"
+                app:layout_constraintTop_toBottomOf="@+id/div_reveline">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/lipstick_d9" />
+
+                <TextView
+                    android:id="@+id/text_niveaLipBalm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Nivea Lip Balm"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:id="@+id/star_niveaLIpBalm"
+                    android:layout_width="50dp"
+                    android:layout_height="15dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_d9" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/description_nivea"
+                    android:layout_width="180dp"
+                    android:layout_height="58dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="bisa melembabkan bibir, ga terlalu tinted jadi bisa dipake sehari² terutama pas sekolah, barangnya juga kecil bisa ditaro di kantong"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+
+                <View
+                    android:layout_width="180dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/grey"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4sp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/comment" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:fontFamily="@font/kronaone_regular"
+                        android:text="200"
+                        android:textColor="@color/grey"
+                        android:textSize="7sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="110dp"
+                        android:src="@drawable/like" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:fontFamily="@font/kronaone_regular"
+                        android:text="3.125"
+                        android:textColor="@color/grey"
+                        android:textSize="7sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/div_heuraGoodGirl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14sp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@+id/viewAll"
+                app:layout_constraintTop_toBottomOf="@+id/title_topReview">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/lipstick_d9" />
+
+                <TextView
+                    android:id="@+id/text_heuraGoodGirl"
+                    android:layout_width="180dp"
+                    android:layout_height="40dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Heura Parfum - Good Girl"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:id="@+id/star_heuraGoodGirl"
+                    android:layout_width="50dp"
+                    android:layout_height="15dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/description_heuraGoodGirl"
+                    android:layout_width="180dp"
+                    android:layout_height="72dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="WANGINYA ENAK BGTT, LUMAYAN TAHAN LAMAA, WANGINYA TU KYK ELEGAN TRS BERAT TAPI COCOK BUAT SEHARI-HARI, BISA NUTUP BAU KRINGETT, WAJIB COBAIN SIH"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+
+                <View
+                    android:layout_width="180dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/grey"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4sp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/comment" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:fontFamily="@font/kronaone_regular"
+                        android:text="56"
+                        android:textColor="@color/grey"
+                        android:textSize="7sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="115dp"
+                        android:src="@drawable/like" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:fontFamily="@font/kronaone_regular"
+                        android:text="3.125"
+                        android:textColor="@color/grey"
+                        android:textSize="7sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/div_wipsy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14sp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@id/viewAll"
+                app:layout_constraintTop_toBottomOf="@+id/div_heuraGoodGirl">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_baseline_location_on_d9" />
+
+                <TextView
+                    android:id="@+id/text_wipsy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/wipsy"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:id="@+id/star_wipsy"
+                    android:layout_width="50dp"
+                    android:layout_height="15dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/description_wipsy"
+                    android:layout_width="180dp"
+                    android:layout_height="125dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Tempatnya strategis ada di daerah tengah kota, suasananya  nyaman dan tenang, cozy banget tempatnya, pilihan makanannya enak dan banyak, harganya juga ga terlalu mahal, tempatnya sejukk, parkirnya juga lumayan luas tapi ga ada atapnya jadi klo hujan helmnya kebasahan"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+
+                <View
+                    android:layout_width="180dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/grey"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4sp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/comment" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:fontFamily="@font/kronaone_regular"
+                        android:text="656"
+                        android:textColor="@color/grey"
+                        android:textSize="7sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="120dp"
+                        android:src="@drawable/like" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:fontFamily="@font/kronaone_regular"
+                        android:text="965"
+                        android:textColor="@color/grey"
+                        android:textSize="7sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/div_colorboxSweatShirt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14sp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@id/viewAll"
+                app:layout_constraintTop_toBottomOf="@+id/div_wipsy">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/clothes_icon_d9" />
+
+                <TextView
+                    android:id="@+id/text_colorboxSweatShirt"
+                    android:layout_width="180dp"
+                    android:layout_height="41dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="COLORBOX - SweatShirt Printed"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:id="@+id/star_colornoxSweatShirt"
+                    android:layout_width="50dp"
+                    android:layout_height="15dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_24" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_star_d9" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/description_colorbokSweatShirt"
+                    android:layout_width="180dp"
+                    android:layout_height="125dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Warnanya pastel lucuu, lumayan tebal dan hangat, printnya lucu, pilihan sizenya juga banyak, lembut pas sipakai, harganya juga ngga terlalu mahal dan karna ini mereknya COLORBOX jadi baju ini bisa dicfri di semua gerai COLORBOX klo masi ada barangnyaa"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+
+                <View
+                    android:layout_width="180dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/grey"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4sp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/comment" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:fontFamily="@font/kronaone_regular"
+                        android:text="15"
+                        android:textColor="@color/grey"
+                        android:textSize="7sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="132dp"
+                        android:src="@drawable/like" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:fontFamily="@font/kronaone_regular"
+                        android:text="77"
+                        android:textColor="@color/grey"
+                        android:textSize="7sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navbar"
+        android:layout_width="match_parent"
+        android:layout_height="111dp"
+        android:background="@drawable/background4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.36"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.051" />
+        app:layout_constraintStart_toStartOf="parent">
+        
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background5"
+            android:src="@drawable/home"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="54dp"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/plus"
+            android:layout_gravity="center" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/person"
+            android:layout_marginTop="42dp"
+            android:layout_marginLeft="302dp"/>
+        
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
