@@ -12,5 +12,5 @@
     <color name="notifbtn">#1D1F30</color>
     <color name="iconbg">#E7C8F9</color>
     <color name="bg">#03071E</color>
-    <color name="iconcolour">#D9D9D9</color>
+    <color name="bg_navbar">#1D1F30</color>
 </resources>
