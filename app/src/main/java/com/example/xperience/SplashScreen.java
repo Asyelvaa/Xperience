@@ -18,7 +18,7 @@ public class SplashScreen extends AppCompatActivity {
     // variable for shared preferences.
     SharedPreferences sharedpreferences;
     String username, password;
-    private int timeLoad=3000;
+    private int timeLoad=1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
